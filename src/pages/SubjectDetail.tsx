@@ -8,7 +8,8 @@ import { Link } from 'react-router-dom';
 export default function SubjectDetail() {
   const { name } = useParams();
   const subjects = data[0].grades['Grade 8'].subjects;
-  const subject: any = subjects[name ?? ''];
+ const subject =
+  name && subjects[name as keyof typeof subjects];
 
   if (!subject) return <Typography>No data available</Typography>;
 
@@ -23,22 +24,25 @@ export default function SubjectDetail() {
             Back
        </Button>
 </Box>
-      <Grid container spacing={3}>
-  <Grid item xs={12} sm={4}>
+     <Grid container spacing={3}>
+       <Grid size={3}>
     <StatsTile
       label="EOL"
       count={subject.count_eol || 0}
       percent={subject.percentage_eol || 0}
     />
   </Grid>
-  <Grid item xs={12} sm={4}>
+  
+
+  <Grid size={3}>
     <StatsTile
       label="FA"
       count={subject.count_fa || 0}
       percent={subject.percentage_fa || 0}
     />
   </Grid>
-  <Grid item xs={12} sm={4}>
+
+  <Grid size={3}>
     <StatsTile
       label="SA"
       count={subject.count_sa || 0}
@@ -46,6 +50,7 @@ export default function SubjectDetail() {
     />
   </Grid>
 </Grid>
+
 
 
       <Paper sx={{ p: 3, mt: 3 }}>

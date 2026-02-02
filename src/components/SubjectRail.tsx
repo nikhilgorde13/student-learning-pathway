@@ -1,4 +1,4 @@
-import { Stack, Button, Paper, Box } from '@mui/material';
+import {  Button, Paper, Box } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 type Props = {
