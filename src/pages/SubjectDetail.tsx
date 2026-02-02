@@ -24,17 +24,16 @@ export default function SubjectDetail() {
             Back
        </Button>
 </Box>
-     <Grid container spacing={3}>
-       <Grid size={3}>
+     <Grid container spacing={{ xs: 2, sm: 3 }}>
+  <Grid size={{ xs: 12, sm: 6, md: 3 }}>
     <StatsTile
       label="EOL"
       count={subject.count_eol || 0}
       percent={subject.percentage_eol || 0}
     />
   </Grid>
-  
 
-  <Grid size={3}>
+  <Grid size={{ xs: 12, sm: 6, md: 3 }}>
     <StatsTile
       label="FA"
       count={subject.count_fa || 0}
@@ -42,7 +41,7 @@ export default function SubjectDetail() {
     />
   </Grid>
 
-  <Grid size={3}>
+  <Grid size={{ xs: 12, sm: 6, md: 3 }}>
     <StatsTile
       label="SA"
       count={subject.count_sa || 0}
